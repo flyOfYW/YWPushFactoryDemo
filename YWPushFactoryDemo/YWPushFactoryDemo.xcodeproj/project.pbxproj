@@ -13,6 +13,17 @@
 		DA5771421E659D7600744E2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5771401E659D7600744E2F /* Main.storyboard */; };
 		DA5771441E659D7600744E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA5771431E659D7600744E2F /* Assets.xcassets */; };
 		DA5771471E659D7600744E2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA5771451E659D7600744E2F /* LaunchScreen.storyboard */; };
+		DA5771501E659DF300744E2F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA57714F1E659DF300744E2F /* CFNetwork.framework */; };
+		DA5771521E659DFC00744E2F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5771511E659DFC00744E2F /* CoreFoundation.framework */; };
+		DA5771541E659E0200744E2F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5771531E659E0200744E2F /* CoreTelephony.framework */; };
+		DA5771561E659E0800744E2F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5771551E659E0800744E2F /* SystemConfiguration.framework */; };
+		DA5771581E659E1000744E2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5771571E659E0F00744E2F /* CoreGraphics.framework */; };
+		DA57715A1E659E1600744E2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5771591E659E1600744E2F /* Foundation.framework */; };
+		DA57715C1E659E1C00744E2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA57715B1E659E1C00744E2F /* UIKit.framework */; };
+		DA57715E1E659E2100744E2F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA57715D1E659E2100744E2F /* Security.framework */; };
+		DA5771601E659E2700744E2F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA57715F1E659E2700744E2F /* UserNotifications.framework */; };
+		DA5771621E659E2E00744E2F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5771611E659E2E00744E2F /* libz.tbd */; };
+		DA5771641E659E3800744E2F /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5771631E659E3800744E2F /* libresolv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,17 @@
 		DA5771431E659D7600744E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA5771461E659D7600744E2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA5771481E659D7600744E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA57714F1E659DF300744E2F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DA5771511E659DFC00744E2F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		DA5771531E659E0200744E2F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		DA5771551E659E0800744E2F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DA5771571E659E0F00744E2F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DA5771591E659E1600744E2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA57715B1E659E1C00744E2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DA57715D1E659E2100744E2F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DA57715F1E659E2700744E2F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		DA5771611E659E2E00744E2F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DA5771631E659E3800744E2F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +55,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5771641E659E3800744E2F /* libresolv.tbd in Frameworks */,
+				DA5771621E659E2E00744E2F /* libz.tbd in Frameworks */,
+				DA5771601E659E2700744E2F /* UserNotifications.framework in Frameworks */,
+				DA57715E1E659E2100744E2F /* Security.framework in Frameworks */,
+				DA57715C1E659E1C00744E2F /* UIKit.framework in Frameworks */,
+				DA57715A1E659E1600744E2F /* Foundation.framework in Frameworks */,
+				DA5771581E659E1000744E2F /* CoreGraphics.framework in Frameworks */,
+				DA5771561E659E0800744E2F /* SystemConfiguration.framework in Frameworks */,
+				DA5771541E659E0200744E2F /* CoreTelephony.framework in Frameworks */,
+				DA5771521E659DFC00744E2F /* CoreFoundation.framework in Frameworks */,
+				DA5771501E659DF300744E2F /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +77,7 @@
 			children = (
 				DA5771361E659D7600744E2F /* YWPushFactoryDemo */,
 				DA5771351E659D7600744E2F /* Products */,
+				DA57714E1E659DF200744E2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +111,24 @@
 				DA5771381E659D7600744E2F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA57714E1E659DF200744E2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA5771631E659E3800744E2F /* libresolv.tbd */,
+				DA5771611E659E2E00744E2F /* libz.tbd */,
+				DA57715F1E659E2700744E2F /* UserNotifications.framework */,
+				DA57715D1E659E2100744E2F /* Security.framework */,
+				DA57715B1E659E1C00744E2F /* UIKit.framework */,
+				DA5771591E659E1600744E2F /* Foundation.framework */,
+				DA5771571E659E0F00744E2F /* CoreGraphics.framework */,
+				DA5771551E659E0800744E2F /* SystemConfiguration.framework */,
+				DA5771531E659E0200744E2F /* CoreTelephony.framework */,
+				DA5771511E659DFC00744E2F /* CoreFoundation.framework */,
+				DA57714F1E659DF300744E2F /* CFNetwork.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
