@@ -71,6 +71,7 @@
 		DA5771771E659EBF00744E2F /* 使用需看.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = "使用需看.rtfd"; sourceTree = "<group>"; };
 		DA5771791E659EBF00744E2F /* libUMessage_Sdk_1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.4.0.a; sourceTree = "<group>"; };
 		DA57717A1E659EBF00744E2F /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		DA5771821E6655DE00744E2F /* YWPushFactoryDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YWPushFactoryDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +119,7 @@
 		DA5771361E659D7600744E2F /* YWPushFactoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DA5771821E6655DE00744E2F /* YWPushFactoryDemo.entitlements */,
 				DA5771661E659EBF00744E2F /* JpushLib */,
 				DA57716A1E659EBF00744E2F /* YWPushLib */,
 				DA5771781E659EBF00744E2F /* UMessage_Sdk_1.4.0 */,
@@ -253,7 +255,16 @@
 				TargetAttributes = {
 					DA5771331E659D7600744E2F = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = F7HM5P7F35;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -417,16 +428,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YWPushFactoryDemo/YWPushFactoryDemo.entitlements;
+				DEVELOPMENT_TEAM = F7HM5P7F35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/YWPushFactoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = YWPushFactoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YWPushFactoryDemo/JpushLib",
 					"$(PROJECT_DIR)/YWPushFactoryDemo/UMessage_Sdk_1.4.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yw.YWPushFactoryDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaowei.TestPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -435,16 +449,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YWPushFactoryDemo/YWPushFactoryDemo.entitlements;
+				DEVELOPMENT_TEAM = F7HM5P7F35;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = $SRCROOT/YWPushFactoryDemo/PrefixHeader.pch;
 				INFOPLIST_FILE = YWPushFactoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YWPushFactoryDemo/JpushLib",
 					"$(PROJECT_DIR)/YWPushFactoryDemo/UMessage_Sdk_1.4.0",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yw.YWPushFactoryDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaowei.TestPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

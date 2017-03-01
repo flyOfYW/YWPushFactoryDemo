@@ -2,13 +2,18 @@
 //  AppDelegate.m
 //  YWPushFactoryDemo
 //
-//  Created by yw on 2017/2/28.
+//  Created by yw on 2017/2/27.
 //  Copyright © 2017年 yw. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "FactoryManager.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<FactoryManagerDelegate>
+
+/** */
+@property (nonatomic, copy) id<PushProtocol>factory;
+
 
 @end
 
@@ -16,36 +21,102 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    FactoryManager *manager = [FactoryManager new];
+    
+    manager.delegate = self;
+    
+    
+    //    需要极光推送，把此注释打开，然后把友盟推送的代码注释掉，其余均不用操作
+    //    _factory = [manager getJPushFactory:launchOptions];
+    
+    
+    //    友盟推送
+    _factory = [manager getUMessageFactory:launchOptions];
+    
+    
     return YES;
 }
-
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+/**
+ iOS 10以上的收到远程推送通知的回调方法
+ 
+ @param code 1-仅仅代表在前台收到信息，还没有开始点击消息*----*0-代表开始点击消息，不管app是运行在前台还是后台
+ @param userInfo 通知内容
+ */
+- (void)didRemoteNotificationAppStatues:(NSInteger)code withUserInfo:(NSDictionary *)userInfo{
+    
+    if (code == 0) {
+        
+        NSLog(@"要开始点击推送消息了:%@", userInfo);
+        
+    }else if (code == 1){
+        
+        NSLog(@"刚收到推送消息了，还未开始点击:%@", userInfo);
+        
+    }
+    
+    
+}
+/**
+ iOS 10以上的收到本地推送通知的回调方法
+ 
+ @param code code 1-仅仅代表在前台收到信息，还没有开始点击消息*----*0-代表开始点击消息，不管app是运行在前台还是后台
+ @param userInfo 通知内容
+ */
+- (void)didLocalNotificationAppStatues:(NSInteger)code withUserInfo:(NSDictionary *)userInfo{
+    
+    if (code == 0) {
+        
+        NSLog(@"要开始点击推送消息了:%@", userInfo);
+        
+    }else if (code == 1){
+        
+        NSLog(@"刚收到推送消息了，还未开始点击:%@", userInfo);
+        
+    }
+    
+}
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    [_factory handleRemoteNotification:userInfo];
+    
+    NSLog(@"iOS6及以下系统，收到通知:%@", userInfo);
+    
 }
 
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:
+(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    
+    [_factory handleRemoteNotification:userInfo];
+    
+    NSLog(@"iOS6及以下系统，收到通知:%@", userInfo);
+    
+    
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    //    清除角标
+    [_factory setApplicationBadgeNumber:application];
+    
 }
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //    清除角标
+    [_factory setApplicationBadgeNumber:application];
+    
 }
 
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    //    注册deviceToken
+    [_factory registerDeviceToken:deviceToken];
+    
 }
-
 
 @end
