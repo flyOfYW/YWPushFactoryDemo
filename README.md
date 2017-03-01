@@ -1,7 +1,7 @@
 # YWPushFactoryDemo
 工厂模式封装极光推送和友盟推送，简洁方便
 
-使用方法：
+仅需2步就可以使用极光和友盟：
 1.修改appkey，在YWPush.h里面修改
 2.在appdelegate的didFinishLaunchingWithOptions方法里，写如下代码：
 
